@@ -20,6 +20,7 @@ import java.io.BufferedReader;
  * @author ISPM
  */
 public class Main {
+    
     public static HashMap<Character,String> huffmanMain(List<Symbol> symbolList){
         PriorityQueue<Node> pq = new PriorityQueue<>();
         
@@ -54,18 +55,25 @@ public class Main {
         }
     }
     
-    public static void readTXT(String chemin){
+    public static String readTXT(String chemin){
+        StringBuilder content = new StringBuilder();
         try (BufferedReader buff = new BufferedReader(new FileReader(chemin)))
         {
             String ligne;
             while ((ligne = buff.readLine()) != null) {
-                // ArrayList<String> bibliotheque = new ArrayList<String>();
-                String[] bibliotheque;
-                bibliotheque =  ligne.split(" ");
+                content.append(ligne);
             }
         } catch (Exception e) {
             System.out.println("error");
         }
+        return content.toString();
+    }
+
+    public static String[] prepareData(String data){
+        return data.split(" ");
+    }
+    public static void addToSymbol(){
+
     }
     public static void main(String[] args) {
         var symbList = new ArrayList<Symbol>();
