@@ -73,7 +73,16 @@ public class Main {
         return data.split(" ");
     }
     public static void addToSymbol(){
-
+        HashMap<Character,String> donne = new HashMap<>();
+        for (String x : prepareData(readTXT("montexte.txt"))){
+            char[] character;
+            character = x.toCharArray();
+            for (char ch : character){
+                if (donne.containsKey(ch)){
+                    // donne.put(ch, donne.get()));
+                }
+            }
+        }
     }
     public static void main(String[] args) {
         var symbList = new ArrayList<Symbol>();
@@ -84,12 +93,13 @@ public class Main {
         symbList.add(new Symbol('x',44));
         symbList.add(new Symbol('.',4));
         symbList.add(new Symbol('s',60));
-                    
-        // var codes = huffmanMain(symbList);
-        // exportCSV(codes);
-        // System.out.println(codes);
+        // System.out.println(symbList.get(4).getSymbol());
+        
+        var codes = huffmanMain(symbList);
+        exportCSV(codes);
+        System.out.println(codes);
 
-        readTXT("montexte.txt");
+        // readTXT("montexte.txt");
     }
         
     
